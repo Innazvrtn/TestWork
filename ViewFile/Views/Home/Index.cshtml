@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Welcome";
+}
+<style>
+    table, tr, td, th {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px;
+    }
+</style>
+
+<h2>Welcome to Sibeesh Passion's Email List</h2>
+<body data-ng-app="APIModule">
+    <div id="tblSubs" ng-controller="APIController">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Size</th>
+               
+            </tr>
+         
+                <tr data-ng-repeat="s in file.dirs">
+              <td> {{s.DirName}}</td>
+                    <td> none</td>
+                    </tr>
+            <tr data-ng-repeat="sf in file.files">
+                <td> <a href="{{sf.FullName}}" title={{sf.FileName}}>{{sf.FileName}}</a></td>
+                <td> {{sf.FileSize}} Mb</td>
+
+                    </tr>
+                   </table>
+    </div>
+</body>
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/angular-route.js"></script>
+<script src="~/Scripts/APIScripts/Module.js"></script>
+<script src="~/Scripts/APIScripts/Service.js"></script>
+<script src="~/Scripts/APIScripts/Controller.js"></script>
+
+
+
